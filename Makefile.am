@@ -5,7 +5,7 @@ nobase_include_HEADERS = snmp.hpp \
 nobase_nodist_include_HEADERS = \
 		xyz/openbmc_project/Network/Client/Create/server.hpp
 
-bin_PROGRAMS = phosphor-network-snmpconf
+bin_PROGRAMS = phosphor-network-snmpconf readFile
 
 noinst_HEADERS = \
 		snmp_client.hpp \
@@ -20,6 +20,9 @@ phosphor_network_snmpconf_SOURCES = \
 		snmp_util.cpp \
 		snmp_serialize.cpp \
 		xyz/openbmc_project/Network/Client/Create/server.cpp
+
+readFile_SOURCES = \
+		   readFile.cpp
 
 CLEANFILES = \
 		xyz/openbmc_project/Network/Client/Create/server.cpp \
@@ -80,6 +83,6 @@ endif
 check_PROGRAMS =
 XFAIL_TESTS =
 
-include test/Makefile.am.include
+#include test/Makefile.am.include
 
-TESTS = $(check_PROGRAMS)
+#TESTS = $(check_PROGRAMS)
